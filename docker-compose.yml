@@ -1,0 +1,19 @@
+version: '3.6'
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "8182:80"
+    volumes:
+      - /var/www/html/UrbanSports:/var/www/html
+      - /var/www/html/UrbanSports/conf/site.conf:/etc/nginx/conf.d/default.conf
+    links:
+      - app
+  app:
+    build:
+      dockerfile: Dockerfile
+      target: start
+      context: /var/www/html/UrbanSports
+    working_dir: /var/www/html
+    volumes:
+      - /var/www/html/UrbanSports:/var/www/html

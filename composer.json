@@ -1,0 +1,27 @@
+{
+  "name": "urbansports/diana-test",
+  "description": "test for UrbanSports",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Diana Martinez",
+      "email": "dpmartinm@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": ">=7.1"
+  },
+  "config": {
+    "preferred-install": {
+      "*": "dist"
+    },
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "UrbanSports\\": "src/"
+    }
+  }
+}
