@@ -7,6 +7,6 @@ $graphicEditor = new GraphicEditor();
 
 $cmd = trim(strtolower( readline("\n> Shapes Array: ") ));
 readline_add_history($cmd);
-$shapes = $graphicEditor->drawGeometricShape($array['shapes']);
+$shapes = $graphicEditor->drawGeometricShape($cmd);
 
 print $shapes;
