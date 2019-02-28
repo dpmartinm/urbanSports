@@ -7,10 +7,11 @@ use UrbanSports\shapes\RectangleShape;
 
 final class GraphicEditor
 {
-    public function drawGeometricShape(array $shapes): string
+    public function drawGeometricShape(string $shapes): string
     {
+        $array = json_decode($shapes, true);
         $listOfShapes = [];
-        foreach ($shapes as $shape){
+        foreach ($array['shapes'] as $shape){
             if(!isset($shape['type']) && !isset($shape['params'])) {
                 return "Please input an array in form of {\"shapes\" : [{\"type\":\"circle\", \"params\" : {...}}]}";
             }

@@ -15,13 +15,13 @@ final class RectangleShape extends AbstractShape implements ShapeInterface
 
     public function generateShape(): string
     {
-        $border = $this->getBorder();
+        $border = $this->getBorder() ? '' : '22';
 
-        $color = $this->getColor();
+        $color = $this->getColor() ? '' : 'White';
 
-        $size = (string)$this->getSize();
+        $size = (string)$this->getSize() ? '' : 2;
 
-        $angle = $this->angle;
+        $angle = $this->angle ? '' : '20';
 
         $circle = $this->mockShape($border, $color, $size, $angle);
 
@@ -38,6 +38,6 @@ final class RectangleShape extends AbstractShape implements ShapeInterface
      */
     private function mockShape(string $border, string $color, string $size, string $angle):string
     {
-        return 'new rectangle with border'. $border . 'Color' . $color . 'Size' . $size . 'angle' . $angle;
+        return 'new rectangle with border '. $border . ' Color ' . $color . ' Size ' . $size . ' angle ' . $angle;
     }
 }

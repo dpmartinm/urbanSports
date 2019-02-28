@@ -19,13 +19,13 @@ final class CircleShape extends AbstractShape implements ShapeInterface
      */
     public function generateShape(): string
     {
-        $border = $this->getBorder();
+        $border = $this->getBorder() ? '' : '7' ;
 
-        $color = $this->getColor();
+        $color = $this->getColor() ? '' : 'Black';
 
-        $size = (string)$this->getSize();
+        $size = (string)$this->getSize() ? '' : 2;
 
-        $radius = (string)$this->radius;
+        $radius = (string)$this->radius ? '' : 10;
 
         $circle = $this->mockShape($border, $color, $size, $radius);
 
